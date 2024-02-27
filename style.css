@@ -15,7 +15,7 @@
 
 .light {
   --text-color: black;
-  --bg-body: url(./assets/bg-mobile-light);
+  --bg-body: url(./assets/bg-mobile-light.jpg);
   --bg-button-color: rgba(0, 0, 0, 0.05);
   --border-color:rgba(0, 0, 0, 0.5);
   --switch-bg: url(./assets/sun.svg);
@@ -64,8 +64,8 @@ body {
 
 #switch{
     position: relative;
-    width: 64px;
     margin: 20px auto;
+    width: 64px;   
 }
 
 #switch button {
@@ -80,7 +80,14 @@ body {
    left: 0;
    z-index: 1;
    transform: translateY(-50%);
+   animation: slide-back 0.4s;
 }
+
+.light #switch button {
+    animation: slide-in 0.4s forwards;
+}
+     
+
 
 #span {
     display: block;
@@ -133,4 +140,23 @@ footer {
     padding: 24px 0;
     text-align: center;
     font-size: 14px;
+}
+
+/* Animation */
+@keyframes slide-in {
+    from {
+        left: 0
+    }
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {    
+        left: 0;
+    }
 }
