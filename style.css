@@ -10,6 +10,7 @@
     --bg-button-color: rgba(255, 255, 255, 0.10);
     --border-color:rgba(255, 255, 255, 0.5);
     --switch-bg: url(./assets/moon-stars.svg);
+    --highlight-color: rgba(255, 255, 255, 0.32)
 
 }
 
@@ -19,9 +20,6 @@
   --bg-button-color: rgba(0, 0, 0, 0.05);
   --border-color:rgba(0, 0, 0, 0.5);
   --switch-bg: url(./assets/sun.svg);
-
-
-
 }
 
 body * {
@@ -38,7 +36,8 @@ body {
 }
 
 #container {
-    /* width: 100%; */
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px;
     padding: 0 24px;
     display: flex;
@@ -86,8 +85,6 @@ body {
 .light #switch button {
     animation: slide-in 0.4s forwards;
 }
-     
-
 
 #span {
     display: block;
@@ -97,6 +94,10 @@ body {
     border: 1px solid var(--border-color);
     backdrop-filter: blur(4px);
     border-radius: 9999px;
+}
+
+#switch button:hover {
+    outline: 8px solid var(--highlight-color);
 }
 
 ul {
@@ -119,6 +120,11 @@ ul li a {
     /* backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px); */
     font-weight: 500;
+}
+
+ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid var(--text-color);
 }
 
 #social-links {
@@ -158,5 +164,15 @@ footer {
     }
     to {    
         left: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    :root{
+        --bg-darck: url(./bg-desktop.png)
+    }
+
+    .light {
+        --bg-light: url(./bg-desktop-light.png)
     }
 }
